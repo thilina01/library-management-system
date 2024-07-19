@@ -196,6 +196,105 @@ To view the logs, you can either:
 - Check the console output when running the application.
 - Open the log file located at `logs/library-management-system.log`.
 
+## 🚀 Testing
+
+### Running Unit Tests
+
+Unit tests are implemented to ensure the functionality and reliability of the Library Management System. The tests can be run using Maven, and the results will be generated in a report format.
+
+**Running Tests:**
+
+To run the unit tests, execute the following command in the root directory of your project:
+
+```bash
+mvn test
+```
+
+### Test Status Badges
+
+You can monitor the status of your tests using badges that show the build status and test coverage. These badges will be updated automatically with each commit to the repository.
+
+### Postman Collection
+
+A Postman collection is available to facilitate testing and exploring the Library Management System API. This collection includes various endpoints for managing borrowers and books. You can import this collection into Postman to quickly set up your API requests.
+
+**Postman Collection Information:**
+- **Name**: Library Management System
+- **Description**: Postman collection for the Library Management System API
+- **Schema**: [Postman Collection Schema](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+
+**Endpoints Included:**
+1. **Register a New Borrower**
+    - **Method**: POST
+    - **URL**: `{{base_url}}/api/borrowers`
+    - **Headers**:
+        - `Content-Type: application/json`
+    - **Body**:
+      ```json
+      {
+        "email": "john.doe@example.com",
+        "name": "John Doe"
+      }
+      ```
+
+2. **Register a New Book**
+    - **Method**: POST
+    - **URL**: `{{base_url}}/api/books`
+    - **Headers**:
+        - `Content-Type: application/json`
+    - **Body**:
+      ```json
+      {
+        "isbn": "1234567890",
+        "title": "Sample Book",
+        "author": "Sample Author"
+      }
+      ```
+
+3. **List All Books**
+    - **Method**: GET
+    - **URL**: `{{base_url}}/api/books`
+
+4. **Borrow a Book**
+    - **Method**: POST
+    - **URL**: `{{base_url}}/api/borrowers/{{borrower_id}}/borrow/{{book_id}}`
+    - **Headers**:
+        - `Content-Type: application/json`
+    - **Body**:
+      ```json
+      {
+        "borrowerId": {{borrower_id}},
+        "bookId": {{book_id}}
+      }
+      ```
+
+5. **Return a Book**
+    - **Method**: POST
+    - **URL**: `{{base_url}}/api/borrowers/{{borrower_id}}/return/{{book_id}}`
+    - **Headers**:
+        - `Content-Type: application/json`
+
+6. **Verify Borrower Details**
+    - **Method**: GET
+    - **URL**: `{{base_url}}/api/borrowers/{{borrower_id}}`
+
+7. **Verify Book Details**
+    - **Method**: GET
+    - **URL**: `{{base_url}}/api/books/{{book_id}}`
+
+**Variables Included:**
+- **base_url**: `http://localhost:8080`
+- **borrower_id**: `1`
+- **book_id**: `1`
+
+### Importing the Collection into Postman
+To import the Postman collection:
+1. Download the `postman_collection.json` file from the repository.
+2. Open Postman and click on `Import`.
+3. Select the `postman_collection.json` file and click `Open`.
+
+This will import all the endpoints into Postman, making it easier to test and interact with the Library Management System API.
+
 ### API Documentation with Swagger
 
 Swagger is integrated into the project to provide interactive API documentation. To access the Swagger UI:
