@@ -221,7 +221,7 @@ A Postman collection is available to facilitate testing and exploring the Librar
 **Postman Collection Information:**
 - **Name**: Library Management System
 - **Description**: Postman collection for the Library Management System API
-- **Schema**: [Postman Collection Schema](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- **Schema**: [Postman Collection Schema](https://raw.githubusercontent.com/thilina01/library-management-system/main/postman_collection.json)
 
 **Endpoints Included:**
 1. **Register a New Borrower**
